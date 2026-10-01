@@ -1,0 +1,30 @@
+{
+  "name": "@stater/web",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack --port 3000",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint \"src/**/*.{ts,tsx}\"",
+    "clean": "rimraf .next"
+  },
+  "dependencies": {
+    "@stater/ui": "workspace:*",
+    "next": "^15.3.3",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@stater/eslint-config": "workspace:*",
+    "@stater/typescript-config": "workspace:*",
+    "@tailwindcss/postcss": "^4.1.8",
+    "@types/node": "^22.15.30",
+    "@types/react": "^19.1.6",
+    "@types/react-dom": "^19.1.6",
+    "eslint": "^9.28.0",
+    "rimraf": "^6.0.1",
+    "tailwindcss": "^4.1.8",
+    "typescript": "^5.9.3"
+  }
+}
