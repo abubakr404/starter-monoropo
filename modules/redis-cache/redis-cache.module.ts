@@ -6,7 +6,7 @@ import { CacheService } from "./cache.service";
  * Optional module: Redis caching
  * Enable with: pnpm add-module redis-cache
  * Requires: REDIS_URL env var
- * Install: pnpm --filter @stater/api add ioredis
+ * Install: pnpm --filter @starter-monoropo/api add ioredis
  */
 @Module({
   imports: [ConfigModule],
