@@ -16,6 +16,7 @@ export class GetProfileHandler implements IQueryHandler<GetProfileQuery> {
         email: true,
         name: true,
         role: true,
+        preferences: true,
         createdAt: true,
         updatedAt: true,
       },

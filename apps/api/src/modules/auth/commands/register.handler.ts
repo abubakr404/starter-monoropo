@@ -1,8 +1,8 @@
 import { ConflictException, Injectable } from "@nestjs/common";
 import { CommandHandler, ICommandHandler } from "@nestjs/cqrs";
-import { JwtService } from "@nestjs/jwt";
 import * as bcrypt from "bcryptjs";
 import { PrismaService } from "../../../database/prisma.service";
+import { AuthTokensService } from "../auth-tokens.service";
 import { RegisterCommand } from "./register.command";
 
 @CommandHandler(RegisterCommand)
@@ -10,7 +10,7 @@ import { RegisterCommand } from "./register.command";
 export class RegisterHandler implements ICommandHandler<RegisterCommand> {
   constructor(
     private readonly prisma: PrismaService,
-    private readonly jwtService: JwtService,
+    private readonly tokens: AuthTokensService,
   ) {}
 
   async execute(command: RegisterCommand) {
@@ -35,12 +35,9 @@ export class RegisterHandler implements ICommandHandler<RegisterCommand> {
         email: true,
         name: true,
         role: true,
-        createdAt: true,
       },
     });
 
-    const accessToken = this.jwtService.sign({ sub: user.id, email: user.email });
-
-    return { user, accessToken };
+    return this.tokens.issueTokens(user);
   }
 }
