@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  transpilePackages: ["@stater/ui"],
+  transpilePackages: ["@starter-monoropo/ui"],
 };
 
 export default nextConfig;

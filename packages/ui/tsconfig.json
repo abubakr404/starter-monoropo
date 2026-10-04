@@ -1,5 +1,5 @@
 {
-  "extends": "@stater/typescript-config/nextjs.json",
+  "extends": "@starter-monoropo/typescript-config/nextjs.json",
   "compilerOptions": {
     "jsx": "react-jsx",
     "outDir": "./dist",

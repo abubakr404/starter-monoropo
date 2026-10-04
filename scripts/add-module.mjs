@@ -18,7 +18,7 @@ const MODULES = {
     description: "SMTP email service",
     importName: "EmailModule",
     importPath: "./modules/email/email.module",
-    deps: ["nodemailer"],
+    deps: ["nodemailer", "@types/nodemailer"],
   },
   "redis-cache": {
     description: "Redis caching layer",
@@ -30,7 +30,7 @@ const MODULES = {
     description: "File upload (local/S3)",
     importName: "FileUploadModule",
     importPath: "./modules/file-upload/file-upload.module",
-    deps: [],
+    deps: ["@types/multer", "@aws-sdk/client-s3"],
   },
   "rate-limit": {
     description: "Advanced rate limiting guard",
@@ -93,7 +93,7 @@ if (!appModule.includes(mod.importName)) {
   writeFileSync(appModulePath, appModule);
 }
 
-const configPath = join(root, "stater.config.ts");
+const configPath = join(root, "starter.config.ts");
 let config = readFileSync(configPath, "utf-8");
 const configKey = moduleName.replace(/-([a-z])/g, (_, c) => c.toUpperCase());
 config = config.replace(
@@ -104,11 +104,11 @@ writeFileSync(configPath, config);
 
 console.log(`✓ Copied module to apps/api/src/modules/${moduleName}`);
 console.log(`✓ Registered ${mod.importName} in app.module.ts`);
-console.log(`✓ Updated stater.config.ts`);
+console.log(`✓ Updated starter.config.ts`);
 
 if (mod.deps.length) {
   console.log(`\nInstall dependencies:`);
-  console.log(`  pnpm --filter @stater/api add ${mod.deps.join(" ")}`);
+  console.log(`  pnpm --filter @starter-monoropo/api add ${mod.deps.join(" ")}`);
 }
 
 console.log(`\nDone! Restart the API server to apply changes.`);

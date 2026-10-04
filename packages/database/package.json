@@ -1,5 +1,5 @@
 {
-  "name": "@stater/database",
+  "name": "@starter-monoropo/database",
   "version": "0.0.0",
   "private": true,
   "main": "./dist/index.js",
@@ -14,15 +14,16 @@
     "build": "tsc",
     "clean": "rimraf dist",
     "db:generate": "prisma generate",
-    "db:push": "prisma db push",
-    "db:migrate": "prisma migrate dev",
-    "db:studio": "prisma studio"
+    "db:push": "node --env-file=../../.env ./node_modules/prisma/build/index.js db push",
+    "db:migrate": "node --env-file=../../.env ./node_modules/prisma/build/index.js migrate dev",
+    "db:studio": "node --env-file=../../.env ./node_modules/prisma/build/index.js studio"
   },
   "dependencies": {
     "@prisma/client": "^6.9.0"
   },
   "devDependencies": {
-    "@stater/typescript-config": "workspace:*",
+    "@starter-monoropo/typescript-config": "workspace:*",
+    "@types/node": "^22.20.4",
     "prisma": "^6.9.0",
     "rimraf": "^6.0.1",
     "typescript": "^5.8.3"

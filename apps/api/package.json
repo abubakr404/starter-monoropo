@@ -1,5 +1,5 @@
 {
-  "name": "@stater/api",
+  "name": "@starter-monoropo/api",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -8,6 +8,7 @@
     "start": "nest start",
     "start:prod": "node dist/main",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\"",
+    "test": "jest",
     "clean": "rimraf dist"
   },
   "dependencies": {
@@ -20,7 +21,7 @@
     "@nestjs/platform-express": "^11.1.3",
     "@nestjs/swagger": "^11.2.0",
     "@nestjs/throttler": "^6.4.0",
-    "@stater/database": "workspace:*",
+    "@starter-monoropo/database": "workspace:*",
     "bcryptjs": "^3.0.2",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.2",
@@ -32,14 +33,18 @@
   "devDependencies": {
     "@nestjs/cli": "^11.0.5",
     "@nestjs/schematics": "^11.0.5",
-    "@stater/eslint-config": "workspace:*",
-    "@stater/typescript-config": "workspace:*",
+    "@nestjs/testing": "^11.2.7",
+    "@starter-monoropo/eslint-config": "workspace:*",
+    "@starter-monoropo/typescript-config": "workspace:*",
     "@types/bcryptjs": "^3.0.0",
     "@types/express": "^5.0.3",
+    "@types/jest": "^30.0.0",
     "@types/node": "^22.15.30",
     "@types/passport-jwt": "^4.0.1",
     "eslint": "^9.28.0",
+    "jest": "^30.5.2",
     "rimraf": "^6.0.1",
+    "ts-jest": "^29.4.14",
     "typescript": "^5.8.3"
   }
 }

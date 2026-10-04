@@ -1,5 +1,5 @@
 {
-  "extends": "@stater/typescript-config/base.json",
+  "extends": "@starter-monoropo/typescript-config/base.json",
   "compilerOptions": {
     "outDir": "./dist",
     "rootDir": "./src"

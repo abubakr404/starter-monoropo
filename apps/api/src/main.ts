@@ -21,7 +21,7 @@ async function bootstrap() {
   );
 
   const config = new DocumentBuilder()
-    .setTitle("Stater API")
+    .setTitle("Starter API")
     .setDescription("NestJS + CQRS + Prisma starter API")
     .setVersion("1.0")
     .addBearerAuth()

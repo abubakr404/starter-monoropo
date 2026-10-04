@@ -1,10 +1,11 @@
 /**
- * Stater template configuration.
- * Toggle optional modules here or run `pnpm add-module <name>`.
+ * Starter template configuration (documentation + CLI only).
+ * Runtime AppModule imports are static; enable modules with `pnpm add-module <name>`,
+ * which copies sources into apps/api and flips the flags below.
  */
-export const staterConfig = {
+export const starterConfig = {
   /** Project display name */
-  name: "stater",
+  name: "starter-monoropo",
 
   /** Enabled backend modules (NestJS) */
   modules: {
@@ -28,5 +29,5 @@ export const staterConfig = {
   },
 } as const;
 
-export type StaterModule = keyof typeof staterConfig.modules;
-export type StaterFeature = keyof typeof staterConfig.features;
+export type StarterModule = keyof typeof starterConfig.modules;
+export type StarterFeature = keyof typeof starterConfig.features;

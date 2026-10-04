@@ -1,5 +1,5 @@
 {
-  "name": "@stater/web",
+  "name": "@starter-monoropo/web",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -10,14 +10,14 @@
     "clean": "rimraf .next"
   },
   "dependencies": {
-    "@stater/ui": "workspace:*",
+    "@starter-monoropo/ui": "workspace:*",
     "next": "^15.3.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
   "devDependencies": {
-    "@stater/eslint-config": "workspace:*",
-    "@stater/typescript-config": "workspace:*",
+    "@starter-monoropo/eslint-config": "workspace:*",
+    "@starter-monoropo/typescript-config": "workspace:*",
     "@tailwindcss/postcss": "^4.1.8",
     "@types/node": "^22.15.30",
     "@types/react": "^19.1.6",

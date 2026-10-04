@@ -1,4 +1,4 @@
-# Stater
+# Starter
 
 A production-ready full-stack starter template for developers who want to ship fast.
 
@@ -18,7 +18,7 @@ A production-ready full-stack starter template for developers who want to ship f
 ## Project Structure
 
 ```
-stater/
+starter-monoropo/
 ├── apps/
 │   ├── api/          # NestJS backend (CQRS)
 │   └── web/          # Next.js frontend
@@ -29,7 +29,7 @@ stater/
 │   └── typescript-config/
 ├── modules/          # Optional backend modules
 ├── scripts/          # CLI utilities
-└── stater.config.ts  # Feature toggles
+└── starter.config.ts  # Feature toggles
 ```
 
 ## Quick Start
@@ -66,7 +66,7 @@ pnpm dev
 
 ## Atomic Design (UI)
 
-Components live in `@stater/ui` organized by complexity:
+Components live in `@starter-monoropo/ui` organized by complexity:
 
 ```
 packages/ui/src/
@@ -79,8 +79,8 @@ packages/ui/src/
 Import from the package:
 
 ```tsx
-import { Button } from "@stater/ui/atoms/button";
-import { DashboardLayout } from "@stater/ui/templates/dashboard-layout";
+import { Button } from "@starter-monoropo/ui/atoms/button";
+import { DashboardLayout } from "@starter-monoropo/ui/templates/dashboard-layout";
 ```
 
 ## CQRS Pattern (Backend)
@@ -113,10 +113,10 @@ pnpm add-module redis-cache     # Redis caching
 pnpm add-module file-upload     # File upload (local/S3)
 ```
 
-Toggle modules in `stater.config.ts`:
+Toggle modules in `starter.config.ts`:
 
 ```ts
-export const staterConfig = {
+export const starterConfig = {
   modules: {
     auth: true,
     users: true,
@@ -167,6 +167,8 @@ See `.env.example` for all variables. Key ones:
 |----------|-------------|
 | `DATABASE_URL` | PostgreSQL connection string |
 | `JWT_SECRET` | Secret for JWT signing |
+| `JWT_EXPIRES_IN` | Access token lifetime (default: `15m`) |
+| `JWT_REFRESH_EXPIRES_IN` | Refresh token lifetime (default: `7d`) |
 | `API_PORT` | Backend port (default: 3001) |
 | `NEXT_PUBLIC_API_URL` | API URL for frontend |
 

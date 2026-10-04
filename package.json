@@ -1,15 +1,16 @@
 {
-  "name": "stater",
+  "name": "starter-monoropo",
   "private": true,
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
+    "test": "turbo run test",
     "format": "prettier --write \"**/*.{ts,tsx,md,json}\"",
     "db:generate": "turbo run db:generate",
     "db:push": "turbo run db:push",
     "db:migrate": "turbo run db:migrate",
-    "db:studio": "pnpm --filter @stater/database db:studio",
+    "db:studio": "pnpm --filter @starter-monoropo/database db:studio",
     "add-module": "node scripts/add-module.mjs",
     "clean": "turbo run clean && rimraf node_modules"
   },
