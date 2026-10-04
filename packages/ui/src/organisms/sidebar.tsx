@@ -24,7 +24,10 @@ export function Sidebar() {
     <aside className="hidden w-64 shrink-0 border-r bg-card md:block">
       <nav className="flex flex-col gap-1 p-4">
         {navItems.map(({ href, label, icon: Icon }) => {
-          const active = pathname === href || pathname.startsWith(`${href}/`);
+          const active =
+            href === "/dashboard"
+              ? pathname === href
+              : pathname === href || pathname.startsWith(`${href}/`);
           return (
             <Link
               key={href}

@@ -2,14 +2,14 @@
 
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { DashboardLayout } from "@stater/ui/templates/dashboard-layout";
+import { DashboardLayout } from "@starter-monoropo/ui/templates/dashboard-layout";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@stater/ui/molecules/card";
+} from "@starter-monoropo/ui/molecules/card";
 import { useAuth } from "@/hooks/use-auth";
 
 export default function DashboardPage() {
@@ -76,7 +76,7 @@ export default function DashboardPage() {
           <Card>
             <CardHeader>
               <CardTitle>Atomic Design</CardTitle>
-              <CardDescription>UI components in @stater/ui</CardDescription>
+              <CardDescription>UI components in @starter-monoropo/ui</CardDescription>
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground">

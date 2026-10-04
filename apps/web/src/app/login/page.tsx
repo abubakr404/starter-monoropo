@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { AuthLayout } from "@stater/ui/templates/auth-layout";
-import { Button } from "@stater/ui/atoms/button";
-import { FormField } from "@stater/ui/molecules/form-field";
-import { Card, CardContent } from "@stater/ui/molecules/card";
+import { AuthLayout } from "@starter-monoropo/ui/templates/auth-layout";
+import { Button } from "@starter-monoropo/ui/atoms/button";
+import { FormField } from "@starter-monoropo/ui/molecules/form-field";
+import { Card, CardContent } from "@starter-monoropo/ui/molecules/card";
 import { api } from "@/lib/api";
 
 export default function LoginPage() {
@@ -21,9 +21,10 @@ export default function LoginPage() {
     setLoading(true);
 
     try {
-      const { accessToken } = await api.login(email, password);
-      api.setToken(accessToken);
-      router.push("/dashboard");
+      const { accessToken, refreshToken } = await api.login(email, password);
+      api.setSession(accessToken, refreshToken);
+      const next = new URLSearchParams(window.location.search).get("next");
+      router.push(next?.startsWith("/") ? next : "/dashboard");
     } catch (err) {
       setError(err instanceof Error ? err.message : "Login failed");
     } finally {

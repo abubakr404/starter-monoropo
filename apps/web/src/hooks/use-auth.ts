@@ -2,33 +2,36 @@
 
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { api } from "@/lib/api";
+import { api, type AuthResponse } from "@/lib/api";
+
+export type AuthUser = AuthResponse["user"];
 
 export function useAuth() {
   const router = useRouter();
-  const [user, setUser] = useState<{ id: string; email: string; name?: string | null } | null>(
-    null,
-  );
+  const [user, setUser] = useState<AuthUser | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const token = api.getToken();
     if (!token) {
+      api.syncSessionCookie();
       setLoading(false);
       return;
     }
+
+    api.syncSessionCookie();
 
     api
       .getProfile()
       .then(setUser)
       .catch(() => {
-        api.setToken(null);
+        api.clearSession();
       })
       .finally(() => setLoading(false));
   }, []);
 
-  const logout = () => {
-    api.setToken(null);
+  const logout = async () => {
+    await api.logout();
     setUser(null);
     router.push("/login");
   };

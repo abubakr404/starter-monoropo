@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { DashboardLayout } from "@stater/ui/templates/dashboard-layout";
-import { DataTable } from "@stater/ui/organisms/data-table";
-import { Badge } from "@stater/ui/atoms/badge";
+import { DashboardLayout } from "@starter-monoropo/ui/templates/dashboard-layout";
+import { DataTable } from "@starter-monoropo/ui/organisms/data-table";
+import { Badge } from "@starter-monoropo/ui/atoms/badge";
 import { useAuth } from "@/hooks/use-auth";
 import { api } from "@/lib/api";
 

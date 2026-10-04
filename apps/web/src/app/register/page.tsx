@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { AuthLayout } from "@stater/ui/templates/auth-layout";
-import { Button } from "@stater/ui/atoms/button";
-import { FormField } from "@stater/ui/molecules/form-field";
-import { Card, CardContent } from "@stater/ui/molecules/card";
+import { AuthLayout } from "@starter-monoropo/ui/templates/auth-layout";
+import { Button } from "@starter-monoropo/ui/atoms/button";
+import { FormField } from "@starter-monoropo/ui/molecules/form-field";
+import { Card, CardContent } from "@starter-monoropo/ui/molecules/card";
 import { api } from "@/lib/api";
 
 export default function RegisterPage() {
@@ -22,8 +22,12 @@ export default function RegisterPage() {
     setLoading(true);
 
     try {
-      const { accessToken } = await api.register(email, password, name || undefined);
-      api.setToken(accessToken);
+      const { accessToken, refreshToken } = await api.register(
+        email,
+        password,
+        name || undefined,
+      );
+      api.setSession(accessToken, refreshToken);
       router.push("/dashboard");
     } catch (err) {
       setError(err instanceof Error ? err.message : "Registration failed");
@@ -33,7 +37,7 @@ export default function RegisterPage() {
   };
 
   return (
-    <AuthLayout title="Create an account" description="Get started with Stater">
+    <AuthLayout title="Create an account" description="Get started with Starter">
       <Card>
         <CardContent className="pt-6">
           <form onSubmit={handleSubmit} className="space-y-4">
