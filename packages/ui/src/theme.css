@@ -1,0 +1,205 @@
+/**
+ * ============================================================
+ * UI THEME TOKENS — single place to rebrand the whole library
+ * ============================================================
+ *
+ * Edit values below, then restart / rebuild the app.
+ * All atoms → templates consume these via Tailwind theme aliases.
+ *
+ * Import:  @import "@starter-monoropo/ui/theme.css";
+ * (globals.css already imports this file)
+ */
+
+:root {
+  /* ---------- Brand / semantic colors (HSL) ---------- */
+  --ui-background: 0 0% 100%;
+  --ui-foreground: 222.2 47% 11%;
+
+  --ui-card: 0 0% 100%;
+  --ui-card-foreground: 222.2 47% 11%;
+
+  --ui-popover: 0 0% 100%;
+  --ui-popover-foreground: 222.2 47% 11%;
+
+  /* Primary action color — change this to rebrand */
+  --ui-primary: 222.2 47% 11%;
+  --ui-primary-foreground: 210 40% 98%;
+
+  --ui-secondary: 210 40% 96%;
+  --ui-secondary-foreground: 222.2 47% 11%;
+
+  --ui-muted: 210 40% 96%;
+  --ui-muted-foreground: 215.4 16% 47%;
+
+  --ui-accent: 210 40% 96%;
+  --ui-accent-foreground: 222.2 47% 11%;
+
+  --ui-destructive: 0 72% 51%;
+  --ui-destructive-foreground: 0 0% 100%;
+
+  --ui-success: 142 71% 35%;
+  --ui-success-foreground: 0 0% 100%;
+
+  --ui-warning: 38 92% 50%;
+  --ui-warning-foreground: 222.2 47% 11%;
+
+  --ui-border: 214.3 32% 91%;
+  --ui-input: 214.3 32% 91%;
+  --ui-ring: 222.2 47% 11%;
+
+  /* ---------- Border radius ---------- */
+  --ui-radius-sm: 0.25rem;
+  --ui-radius-md: 0.5rem;
+  --ui-radius-lg: 0.75rem;
+  --ui-radius-xl: 1rem;
+  --ui-radius-full: 9999px;
+
+  /* ---------- Spacing (padding / gaps) ---------- */
+  --ui-space-1: 0.25rem;
+  --ui-space-2: 0.5rem;
+  --ui-space-3: 0.75rem;
+  --ui-space-4: 1rem;
+  --ui-space-5: 1.25rem;
+  --ui-space-6: 1.5rem;
+  --ui-space-8: 2rem;
+  --ui-space-10: 2.5rem;
+  --ui-space-12: 3rem;
+
+  /* ---------- Control sizes (button / input height) ---------- */
+  --ui-control-sm: 2rem;
+  --ui-control-md: 2.5rem;
+  --ui-control-lg: 2.75rem;
+
+  /* ---------- Horizontal padding inside controls ---------- */
+  --ui-px-sm: 0.75rem;
+  --ui-px-md: 1rem;
+  --ui-px-lg: 1.5rem;
+
+  /* ---------- Typography scale ---------- */
+  --ui-text-xs: 0.75rem;
+  --ui-text-sm: 0.875rem;
+  --ui-text-base: 1rem;
+  --ui-text-lg: 1.125rem;
+  --ui-text-xl: 1.25rem;
+  --ui-text-2xl: 1.5rem;
+  --ui-text-3xl: 1.875rem;
+
+  /* ---------- Shadows ---------- */
+  --ui-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --ui-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --ui-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+  /* ---------- Layout ---------- */
+  --ui-container: 72rem;
+  --ui-sidebar: 16rem;
+  --ui-header: 4rem;
+}
+
+.dark {
+  --ui-background: 222.2 47% 7%;
+  --ui-foreground: 210 40% 98%;
+
+  --ui-card: 222.2 47% 9%;
+  --ui-card-foreground: 210 40% 98%;
+
+  --ui-popover: 222.2 47% 9%;
+  --ui-popover-foreground: 210 40% 98%;
+
+  --ui-primary: 210 40% 98%;
+  --ui-primary-foreground: 222.2 47% 11%;
+
+  --ui-secondary: 217.2 33% 17%;
+  --ui-secondary-foreground: 210 40% 98%;
+
+  --ui-muted: 217.2 33% 17%;
+  --ui-muted-foreground: 215 20% 65%;
+
+  --ui-accent: 217.2 33% 17%;
+  --ui-accent-foreground: 210 40% 98%;
+
+  --ui-destructive: 0 63% 40%;
+  --ui-destructive-foreground: 0 0% 100%;
+
+  --ui-success: 142 60% 40%;
+  --ui-success-foreground: 0 0% 100%;
+
+  --ui-warning: 38 92% 50%;
+  --ui-warning-foreground: 222.2 47% 11%;
+
+  --ui-border: 217.2 33% 17%;
+  --ui-input: 217.2 33% 17%;
+  --ui-ring: 212.7 27% 84%;
+}
+
+/**
+ * Map UI tokens → Tailwind v4 theme utilities
+ * (bg-primary, rounded-md, h-control-md, p-ui-4, …)
+ */
+@theme inline {
+  --color-background: hsl(var(--ui-background));
+  --color-foreground: hsl(var(--ui-foreground));
+  --color-card: hsl(var(--ui-card));
+  --color-card-foreground: hsl(var(--ui-card-foreground));
+  --color-popover: hsl(var(--ui-popover));
+  --color-popover-foreground: hsl(var(--ui-popover-foreground));
+  --color-primary: hsl(var(--ui-primary));
+  --color-primary-foreground: hsl(var(--ui-primary-foreground));
+  --color-secondary: hsl(var(--ui-secondary));
+  --color-secondary-foreground: hsl(var(--ui-secondary-foreground));
+  --color-muted: hsl(var(--ui-muted));
+  --color-muted-foreground: hsl(var(--ui-muted-foreground));
+  --color-accent: hsl(var(--ui-accent));
+  --color-accent-foreground: hsl(var(--ui-accent-foreground));
+  --color-destructive: hsl(var(--ui-destructive));
+  --color-destructive-foreground: hsl(var(--ui-destructive-foreground));
+  --color-success: hsl(var(--ui-success));
+  --color-success-foreground: hsl(var(--ui-success-foreground));
+  --color-warning: hsl(var(--ui-warning));
+  --color-warning-foreground: hsl(var(--ui-warning-foreground));
+  --color-border: hsl(var(--ui-border));
+  --color-input: hsl(var(--ui-input));
+  --color-ring: hsl(var(--ui-ring));
+
+  --radius-sm: var(--ui-radius-sm);
+  --radius-md: var(--ui-radius-md);
+  --radius-lg: var(--ui-radius-lg);
+  --radius-xl: var(--ui-radius-xl);
+  --radius-full: var(--ui-radius-full);
+
+  --spacing-ui-1: var(--ui-space-1);
+  --spacing-ui-2: var(--ui-space-2);
+  --spacing-ui-3: var(--ui-space-3);
+  --spacing-ui-4: var(--ui-space-4);
+  --spacing-ui-5: var(--ui-space-5);
+  --spacing-ui-6: var(--ui-space-6);
+  --spacing-ui-8: var(--ui-space-8);
+  --spacing-ui-10: var(--ui-space-10);
+  --spacing-ui-12: var(--ui-space-12);
+
+  --spacing-px-sm: var(--ui-px-sm);
+  --spacing-px-md: var(--ui-px-md);
+  --spacing-px-lg: var(--ui-px-lg);
+
+  --height-control-sm: var(--ui-control-sm);
+  --height-control-md: var(--ui-control-md);
+  --height-control-lg: var(--ui-control-lg);
+  --width-control-sm: var(--ui-control-sm);
+  --width-control-md: var(--ui-control-md);
+  --width-control-lg: var(--ui-control-lg);
+
+  --text-ui-xs: var(--ui-text-xs);
+  --text-ui-sm: var(--ui-text-sm);
+  --text-ui-base: var(--ui-text-base);
+  --text-ui-lg: var(--ui-text-lg);
+  --text-ui-xl: var(--ui-text-xl);
+  --text-ui-2xl: var(--ui-text-2xl);
+  --text-ui-3xl: var(--ui-text-3xl);
+
+  --shadow-ui-sm: var(--ui-shadow-sm);
+  --shadow-ui-md: var(--ui-shadow-md);
+  --shadow-ui-lg: var(--ui-shadow-lg);
+
+  --max-width-container: var(--ui-container);
+  --width-sidebar: var(--ui-sidebar);
+  --height-header: var(--ui-header);
+}

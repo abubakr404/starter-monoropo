@@ -21,8 +21,8 @@ export function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="hidden w-64 shrink-0 border-r bg-card md:block">
-      <nav className="flex flex-col gap-1 p-4">
+    <aside className="hidden w-sidebar shrink-0 border-r bg-card md:block">
+      <nav className="flex flex-col gap-ui-1 p-ui-4">
         {navItems.map(({ href, label, icon: Icon }) => {
           const active =
             href === "/dashboard"
