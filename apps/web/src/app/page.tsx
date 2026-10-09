@@ -55,6 +55,21 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@starter-monoropo/ui/molecules/select";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@starter-monoropo/ui/molecules/accordion";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@starter-monoropo/ui/molecules/sheet";
 import { Switch } from "@starter-monoropo/ui/molecules/switch";
 import {
   Tabs,
@@ -69,6 +84,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@starter-monoropo/ui/molecules/tooltip";
+import { toast } from "@starter-monoropo/ui/molecules/use-toast";
 import { Breadcrumb } from "@starter-monoropo/ui/organisms/breadcrumb";
 import { DataTable } from "@starter-monoropo/ui/organisms/data-table";
 import { Footer } from "@starter-monoropo/ui/organisms/footer";
@@ -722,6 +738,97 @@ export default function DesignSystemPage() {
                   Query: {searchQuery || "(empty)"}
                 </p>
               </div>
+            </DemoBlock>
+
+            <DemoBlock
+              name="Accordion"
+              importPath={`import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@starter-monoropo/ui/molecules/accordion";`}
+            >
+              <Accordion type="single" collapsible className="w-full max-w-md">
+                <AccordionItem value="item-1">
+                  <AccordionTrigger>What is this starter?</AccordionTrigger>
+                  <AccordionContent>
+                    A Turborepo monorepo with NestJS, Next.js, Prisma, and a shared UI package.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-2">
+                  <AccordionTrigger>Where do I change colors?</AccordionTrigger>
+                  <AccordionContent>
+                    Edit <code className="text-xs">packages/ui/src/theme.css</code> — one file
+                    drives the whole library.
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </DemoBlock>
+
+            <DemoBlock
+              name="Sheet"
+              importPath={`import { Sheet, SheetTrigger, SheetContent, SheetHeader, SheetTitle, SheetDescription, SheetFooter } from "@starter-monoropo/ui/molecules/sheet";`}
+            >
+              <Sheet>
+                <SheetTrigger asChild>
+                  <Button variant="outline">Open sheet</Button>
+                </SheetTrigger>
+                <SheetContent side="right">
+                  <SheetHeader>
+                    <SheetTitle>Panel</SheetTitle>
+                    <SheetDescription>
+                      Slide-over surface for filters, details, or mobile nav.
+                    </SheetDescription>
+                  </SheetHeader>
+                  <div className="py-4 text-sm text-muted-foreground">
+                    Sheet body content goes here.
+                  </div>
+                  <SheetFooter>
+                    <Button>Save</Button>
+                  </SheetFooter>
+                </SheetContent>
+              </Sheet>
+            </DemoBlock>
+
+            <DemoBlock
+              name="Toast"
+              importPath={`import { toast } from "@starter-monoropo/ui/molecules/use-toast";\nimport { Toaster } from "@starter-monoropo/ui/molecules/toaster";`}
+            >
+              <div className="flex flex-wrap gap-2">
+                <Button
+                  onClick={() =>
+                    toast({
+                      title: "Saved",
+                      description: "Your changes are live.",
+                    })
+                  }
+                >
+                  Default toast
+                </Button>
+                <Button
+                  variant="destructive"
+                  onClick={() =>
+                    toast({
+                      variant: "destructive",
+                      title: "Something went wrong",
+                      description: "Please try again.",
+                    })
+                  }
+                >
+                  Destructive
+                </Button>
+                <Button
+                  variant="success"
+                  onClick={() =>
+                    toast({
+                      variant: "success",
+                      title: "Success",
+                      description: "Action completed.",
+                    })
+                  }
+                >
+                  Success
+                </Button>
+              </div>
+              <p className="mt-2 text-xs text-muted-foreground">
+                Mount <code>&lt;Toaster /&gt;</code> once in your app layout (already wired).
+              </p>
             </DemoBlock>
           </Section>
 

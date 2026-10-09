@@ -50,7 +50,7 @@ import { DashboardLayout } from "@starter-monoropo/ui/templates/dashboard-layout
 Button, Input, Textarea, Label, Badge, Avatar, Checkbox, Separator, Spinner, Skeleton, Alert
 
 ### Molecules
-Card, FormField, Switch, ThemeToggle, Select, Dialog, DropdownMenu, Tabs, Tooltip, Progress, EmptyState, PageHeader, SearchInput
+Card, FormField, Switch, ThemeToggle, Select, Dialog, DropdownMenu, Tabs, Tooltip, Progress, EmptyState, PageHeader, SearchInput, Accordion, Sheet, Toast / Toaster / useToast
 
 ### Organisms
 Header, Sidebar, Navbar, Footer, DataTable, Pagination, Breadcrumb, StatCard / StatsGrid, UserMenu
