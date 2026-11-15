@@ -83,6 +83,13 @@ import { Button } from "@starter-monoropo/ui/atoms/button";
 import { DashboardLayout } from "@starter-monoropo/ui/templates/dashboard-layout";
 ```
 
+### Figma design system
+
+- File: [Starter Monorepo Design System](https://www.figma.com/design/yw5Yit1ljqnVWiWWjDAAlJ/Starter-Monorepo-Design-System)
+- Sync workflow + honest limits: [`docs/figma-code-sync.md`](docs/figma-code-sync.md)
+- Code Connect templates: `packages/ui/src/figma/*.figma.ts`
+- Token bridge: `packages/ui/src/theme/figma-bridge.ts`
+
 ## CQRS Pattern (Backend)
 
 Each feature module follows command/query separation:

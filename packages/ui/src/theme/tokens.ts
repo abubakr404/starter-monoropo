@@ -1,6 +1,8 @@
 /**
  * Typed mirror of theme.css tokens for docs / runtime reads.
  * Source of truth for values remains theme.css — keep names in sync.
+ *
+ * Figma pairing: see `./figma-bridge.ts` and docs/figma-code-sync.md
  */
 export const themeTokenGroups = {
   colors: [
@@ -22,3 +24,13 @@ export const themeTokenGroups = {
 } as const;
 
 export type ThemeColor = (typeof themeTokenGroups.colors)[number];
+
+export {
+  FIGMA_FILE_KEY,
+  FIGMA_FILE_URL,
+  colorTokenBridge,
+  spacingTokenBridge,
+  radiusTokenBridge,
+  controlTokenBridge,
+  figmaComponentNodes,
+} from "./figma-bridge";
