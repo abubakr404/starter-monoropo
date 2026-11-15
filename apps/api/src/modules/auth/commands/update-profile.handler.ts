@@ -2,6 +2,7 @@ import { Injectable, NotFoundException } from "@nestjs/common";
 import { CommandHandler, ICommandHandler } from "@nestjs/cqrs";
 import * as bcrypt from "bcryptjs";
 import { PrismaService } from "../../../database/prisma.service";
+import { AuthProfile, toUserPreferences } from "../types/profile";
 import { UpdateProfileCommand } from "./update-profile.command";
 
 @CommandHandler(UpdateProfileCommand)
@@ -9,7 +10,7 @@ import { UpdateProfileCommand } from "./update-profile.command";
 export class UpdateProfileHandler implements ICommandHandler<UpdateProfileCommand> {
   constructor(private readonly prisma: PrismaService) {}
 
-  async execute(command: UpdateProfileCommand) {
+  async execute(command: UpdateProfileCommand): Promise<AuthProfile> {
     const existing = await this.prisma.user.findUnique({
       where: { id: command.userId },
     });
@@ -43,7 +44,7 @@ export class UpdateProfileHandler implements ICommandHandler<UpdateProfileComman
       };
     }
 
-    return this.prisma.user.update({
+    const user = await this.prisma.user.update({
       where: { id: command.userId },
       data,
       select: {
@@ -55,5 +56,14 @@ export class UpdateProfileHandler implements ICommandHandler<UpdateProfileComman
         updatedAt: true,
       },
     });
+
+    return {
+      id: user.id,
+      email: user.email,
+      name: user.name,
+      role: user.role,
+      preferences: toUserPreferences(user.preferences),
+      updatedAt: user.updatedAt,
+    };
   }
 }
