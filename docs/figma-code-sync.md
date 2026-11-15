@@ -20,8 +20,12 @@ This documents the **supported** loop between `@starter-monoropo/ui` and Figma. 
 | Cover | Entry + intent |
 | Foundations / Tokens | Specimen for Color / Spacing |
 | Button, Input, Badge, Card, Label | Component sets / mains matching UI package |
+| Checkbox, Switch, Textarea, Avatar, Separator, Skeleton, Spinner | Additional atoms |
+| RadioGroup, Slider, Toggle, Alert, Table, IconButton | Expanded primitives |
 | Example / Auth | Login composition from instances |
 | Example / Dashboard | Overview composition from instances |
+
+Molecules such as Dialog, Sheet, Popover, AlertDialog, Select, Tabs, Accordion, Tooltip, DropdownMenu also exist in code; Figma coverage for those overlays is deferred (see report).
 
 ## Source of truth
 

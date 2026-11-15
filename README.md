@@ -70,9 +70,12 @@ Components live in `@starter-monoropo/ui` organized by complexity:
 
 ```
 packages/ui/src/
-├── atoms/       # Button, Input, Label, Badge, Avatar
-├── molecules/   # Card, FormField, Switch, ThemeToggle
-├── organisms/   # Header, Sidebar, DataTable
+├── atoms/       # Button, Input, Label, Badge, Avatar, Checkbox, Textarea,
+│                # Alert, Separator, Skeleton, Spinner, RadioGroup, Slider,
+│                # Toggle, Table, ScrollArea, AspectRatio, IconButton, …
+├── molecules/   # Card, FormField, Switch, Select, Dialog, Sheet, Tabs,
+│                # Accordion, Tooltip, Popover, AlertDialog, HoverCard, …
+├── organisms/   # Header, Sidebar, DataTable, Breadcrumb, Pagination
 └── templates/   # AuthLayout, DashboardLayout
 ```
 
