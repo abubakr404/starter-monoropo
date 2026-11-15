@@ -1,0 +1,18 @@
+{
+  "codeConnect": {
+    "parser": "react",
+    "include": ["packages/ui/src/figma/**/*.figma.ts"],
+    "exclude": ["**/node_modules/**", "**/dist/**"],
+    "importPaths": {
+      "@starter-monoropo/ui/atoms/*": "./packages/ui/src/atoms/*",
+      "@starter-monoropo/ui/molecules/*": "./packages/ui/src/molecules/*"
+    },
+    "paths": {
+      "@starter-monoropo/ui/atoms/*": ["./packages/ui/src/atoms/*"],
+      "@starter-monoropo/ui/molecules/*": ["./packages/ui/src/molecules/*"]
+    },
+    "documentUrlSubstitutions": {
+      "https://www.figma.com/design/yw5Yit1ljqnVWiWWjDAAlJ": "https://www.figma.com/design/yw5Yit1ljqnVWiWWjDAAlJ/Starter-Monorepo-Design-System"
+    }
+  }
+}
