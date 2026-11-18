@@ -3,6 +3,9 @@ import { buttonVariants } from "./button";
 import { chipVariants } from "./chip";
 import { counterBadgeVariants } from "./counter-badge";
 import { fabVariants } from "./fab";
+import { imageFrameVariants } from "./image";
+import { listItemVariants } from "./list-item";
+import { overlayVariants } from "./overlay";
 import { toggleVariants } from "./toggle";
 import { themeTokenGroups } from "../theme/tokens";
 import { figmaComponentNodes } from "../theme/figma-bridge";
@@ -42,5 +45,28 @@ describe("tour ds adaptation batch 1", () => {
     expect("Chip" in figmaComponentNodes).toBe(true);
     expect("ToggleGroup" in figmaComponentNodes).toBe(true);
     expect("Stepper" in figmaComponentNodes).toBe(true);
+  });
+});
+
+describe("tour ds adaptation batch 2", () => {
+  it("exposes list item selected styles", () => {
+    expect(listItemVariants({ selected: true })).toContain("bg-accent");
+  });
+
+  it("exposes image ratio and error state", () => {
+    expect(imageFrameVariants({ ratio: "16:9" })).toContain("aspect-video");
+    expect(imageFrameVariants({ state: "error" })).toContain("destructive");
+  });
+
+  it("exposes overlay opacity tokens", () => {
+    expect(overlayVariants({ opacity: "heavy" })).toContain("bg-black/60");
+  });
+
+  it("registers media and list figma nodes", () => {
+    expect(figmaComponentNodes.CalendarDay).toBeTruthy();
+    expect(figmaComponentNodes.Upload).toBeTruthy();
+    expect(figmaComponentNodes.ListItem).toBeTruthy();
+    expect(figmaComponentNodes.Command).toBeTruthy();
+    expect(figmaComponentNodes.Carousel).toBeTruthy();
   });
 });

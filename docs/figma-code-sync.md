@@ -22,11 +22,13 @@ This documents the **supported** loop between `@starter-monoropo/ui` and Figma. 
 | Button, Input, Badge, Card, Label | Component sets / mains matching UI package |
 | Checkbox, Switch, Textarea, Avatar, Separator, Skeleton, Spinner | Additional atoms |
 | RadioGroup, Slider, Toggle, Alert, Table, IconButton | Expanded primitives |
-| Selection & progress (Chip, Fab, ToggleGroupItem, Rating, InputOTP, Stepper, QuantityStepper, AvatarGroup, CounterBadge, ButtonGroup) | Tour DS adaptations on starter tokens |
+| Selection & progress | Chip, Fab, ToggleGroupItem, Rating, InputOTP, Stepper, QuantityStepper, AvatarGroup, CounterBadge, ButtonGroup |
+| Media & pickers | CalendarDay, CalendarMonth, DatePicker, Upload, Image, Overlay, Carousel |
+| Lists & menus | ListItem, Command, MenuItem, Snackbar, SegmentedControl, TitlePair |
 | Example / Auth | Login composition from instances |
 | Example / Dashboard | Overview composition from instances |
 
-Molecules such as Dialog, Sheet, Popover, AlertDialog, Select, Tabs, Accordion, Tooltip, DropdownMenu also exist in code; Figma coverage for those overlays is deferred (see report). Tour product cards (Listing/Booking/Wallet/…) stay out of the starter library — adapt per product.
+Overlay molecules (Dialog, Sheet, …) exist in code; deeper Figma polish can continue. Tour product cards (Listing/Booking/Wallet/…) stay out of the starter library — adapt per product.
 
 ## Source of truth
 
