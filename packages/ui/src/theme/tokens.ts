@@ -15,6 +15,7 @@ export const themeTokenGroups = {
     "destructive",
     "success",
     "warning",
+    "info",
     "border",
     "card",
   ],

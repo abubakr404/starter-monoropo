@@ -43,6 +43,9 @@
   --ui-warning: 38 92% 50%;
   --ui-warning-foreground: 222.2 47% 11%;
 
+  --ui-info: 211 100% 45%;
+  --ui-info-foreground: 0 0% 100%;
+
   --ui-border: 214.3 32% 91%;
   --ui-input: 214.3 32% 91%;
   --ui-ring: 222.2 47% 11%;
@@ -126,6 +129,9 @@
   --ui-warning: 38 92% 50%;
   --ui-warning-foreground: 222.2 47% 11%;
 
+  --ui-info: 211 90% 55%;
+  --ui-info-foreground: 222.2 47% 11%;
+
   --ui-border: 217.2 33% 17%;
   --ui-input: 217.2 33% 17%;
   --ui-ring: 212.7 27% 84%;
@@ -156,6 +162,8 @@
   --color-success-foreground: hsl(var(--ui-success-foreground));
   --color-warning: hsl(var(--ui-warning));
   --color-warning-foreground: hsl(var(--ui-warning-foreground));
+  --color-info: hsl(var(--ui-info));
+  --color-info-foreground: hsl(var(--ui-info-foreground));
   --color-border: hsl(var(--ui-border));
   --color-input: hsl(var(--ui-input));
   --color-ring: hsl(var(--ui-ring));
