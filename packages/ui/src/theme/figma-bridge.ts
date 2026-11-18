@@ -97,4 +97,18 @@ export const figmaComponentNodes = {
   QuantityStepper: "31:173",
   AvatarGroup: "31:180",
   ButtonGroup: "31:187",
+  // Batch 2 — Media & pickers / Lists & menus
+  CalendarDay: "36:33",
+  DatePicker: "36:42",
+  Upload: "36:68",
+  Overlay: "36:81",
+  Image: "36:86",
+  TitlePair: "36:97",
+  ListItem: "37:33",
+  Carousel: "37:66",
+  Command: "37:73",
+  MenuItem: "37:84",
+  Snackbar: "37:95",
+  SegmentedControl: "37:106",
+  CalendarMonth: "37:128",
 } as const;
